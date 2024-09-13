@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A level T/T</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        height: 100vh;
+      }
+      .Timetable {
+        width: 100%;
+        border-collapse: collapse;
+        border: 2px solid rgb(200, 200, 200);
+      }
+      thead {
+        background-color: grey;
+        border-collapse: collapse;
+        border: 2px solid rgb(200, 200, 200);
+        font-weight: 900;
+      }
+      h1 {
+        font-family: sans-serif;
+        font-size: xx-large;
+        text-align: center;
+        text-underline-offset: 10px;
+        text-decoration: underline;
+      }
+      td {
+        font-family: sans-serif;
+        text-align: center;
+      }
+      .Business {
+        background-color: rgb(226, 179, 116);
+      }
+      .Economics {
+        background-color: rgb(228, 105, 17);
+      }
+      .CompSci {
+        background-color: rgb(235, 150, 58);
+      }
+      .Months {
+        background-color: grey;
+        text-align: center;
+        font-weight: 900;
+        border-collapse: collapse;
+        border: 2px solid rgb(200, 200, 200);
+      }
+      .Timetable .done {
+        text-decoration: line-through;
+        color: #999;
+      }
+    </style>
+    <script>
+      function setter(checkbox) {
+        let row = checkbox.parentNode.parentNode;
+        let tds = row.querySelectorAll("td:not(.Months)");
+        tds.forEach((td) => {
+          if (checkbox.checked) {
+            td.classList.add("done");
+          } else {
+            td.classList.remove("done");
+          }
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <h1>A-Levels</h1>
+    <div>
+      <table class="Timetable">
+        <thead>
+          <tr>
+            <td>Month</td>
+            <td>Date</td>
+            <td>Time</td>
+            <td>Subject</td>
+            <td>Paper</td>
+            <td>Room</td>
+            <td>Duration</td>
+            <td>Done</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="Business">
+            <td class="Months" rowspan="4">May</td>
+            <td>Tues 14th</td>
+            <td>09:00</td>
+            <td>Bus</td>
+            <td>1</td>
+            <td>Conf</td>
+            <td>2h</td>
+            <td>
+              <input type="checkbox" onclick="setter(this)" />
+            </td>
+          </tr>
+          <tr class="Economics">
+            <td>Weds 15th</td>
+            <td>09:00</td>
+            <td>Econ</td>
+            <td>1</td>
+            <td>k</td>
+            <td>2h</td>
+            <td>
+              <input type="checkbox" onclick="setter(this)" />
+            </td>
+          </tr>
+          <tr class="Economics">
+            <td>Mon 20th</td>
+            <td>13:00</td>
+            <td>Econ</td>
+            <td>2</td>
+            <td>k</td>
+            <td>2h</td>
+            <td>
+              <input type="checkbox" onclick="setter(this)" />
+            </td>
+          </tr>
+          <tr class="Business">
+            <td>Tues 21st</td>
+            <td>09:00</td>
+            <td>Bus</td>
+            <td>2</td>
+            <td>k</td>
+            <td>2h</td>
+            <td>
+              <input type="checkbox" onclick="setter(this)" />
+            </td>
+          </tr>
+          <tr class="Business">
+            <td class="Months" rowspan="4">June</td>
+            <td>Thurs 6th</td>
+            <td>09:00</td>
+            <td>Bus</td>
+            <td>3</td>
+            <td>k</td>
+            <td>2h</td>
+            <td>
+              <input type="checkbox" onclick="setter(this)" />
+            </td>
+          </tr>
+          <tr class="Economics">
+            <td>Fri 7th</td>
+            <td>09:00</td>
+            <td>Econ</td>
+            <td>3</td>
+            <td>k</td>
+            <td>2h</td>
+            <td>
+              <input type="checkbox" onclick="setter(this)" />
+            </td>
+          </tr>
+          <tr class="CompSci">
+            <td>Mon 10th</td>
+            <td>13:00</td>
+            <td>C-S</td>
+            <td>1</td>
+            <td>k</td>
+            <td>2h 45m</td>
+            <td>
+              <input type="checkbox" onclick="setter(this)" />
+            </td>
+          </tr>
+          <tr class="CompSci">
+            <td>Tues 18th</td>
+            <td>13:00</td>
+            <td>C-S</td>
+            <td>2</td>
+            <td>Conf</td>
+            <td>2h 45m</td>
+            <td>
+              <input type="checkbox" onclick="setter(this)" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
